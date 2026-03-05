@@ -3265,7 +3265,7 @@ if (remaining === "/" && !url.pathname.endsWith("/")) {
       }
     }
 
-    // 直连模式：/cf.xmsl.org:80 或 /https://cf.xmsl.org:80
+    // 直连模式：/example.com:80 或 /https://example.com:80
     const enableDirect = String(env.ENABLE_DIRECT_PROXY || "0") === "1";
     if (!enableDirect) return new Response("Node Not Found", { status: 404 });
 
@@ -3279,3 +3279,4 @@ if (remaining === "/" && !url.pathname.endsWith("/")) {
     return ProxyHandler.handleDirect(request, directRaw, env);
   }
 };
+
